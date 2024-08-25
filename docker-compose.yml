@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  webstreamer:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - ENV_VAR_NAME=value # Add any environment variables here if needed
+    volumes:
+      - .:/app # Mount the current directory to the container if you want to make changes to the code
+    command: ["venv/bin/python", "-m", "WebStreamer"]
